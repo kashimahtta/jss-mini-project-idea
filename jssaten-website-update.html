@@ -2151,6 +2151,7 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="assets/css/student-portal.css" />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -2197,6 +2198,7 @@
           <a href="#research">Research</a>
           <a href="#placements">Placements</a>
           <a href="#facilities">Facilities</a>
+          <a href="#student-portal">Student Portal</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-right">
@@ -2224,6 +2226,7 @@
       <a href="#research">Research</a>
       <a href="#placements">Placements</a>
       <a href="#facilities">Facilities</a>
+      <a href="#student-portal">Student Portal</a>
       <a href="#contact">Contact</a>
       <a href="#admissions" class="btn btn-primary nav-cta">Apply Now</a>
     </nav>
@@ -2960,6 +2963,141 @@
         </div>
       </section>
 
+      <!-- STUDENT PORTAL -->
+      <section class="section-pad" id="student-portal">
+        <div class="wrap">
+          <div class="student-portal-head">
+            <div>
+              <p class="kicker">Student services</p>
+              <h2>Student Portal</h2>
+              <p>
+                View your academic progress, attendance and internship status in
+                one place.
+              </p>
+            </div>
+            <div class="portal-demo-note">
+              Demo dashboard — connect it to the official student database
+              before publishing.
+            </div>
+          </div>
+          <form class="portal-search" id="portalSearch">
+            <input
+              id="portalRollNumber"
+              placeholder="Enter roll number (e.g. JSS2024CSE001)"
+              aria-label="Student roll number"
+            /><button type="submit">View record</button>
+          </form>
+          <div class="portal-card" style="margin-bottom: 16px">
+            <strong id="portalStudentName">Aarav Sharma · JSS2024CSE001</strong>
+          </div>
+          <div class="portal-grid">
+            <div class="portal-card">
+              <h3>Student profile</h3>
+              <div class="portal-profile">
+                <div class="portal-field">
+                  <span>Roll number</span><strong>JSS2024CSE001</strong>
+                </div>
+                <div class="portal-field">
+                  <span>Programme</span><strong>B.Tech CSE</strong>
+                </div>
+                <div class="portal-field">
+                  <span>Year / semester</span><strong>3rd Year / VI</strong>
+                </div>
+                <div class="portal-field">
+                  <span>Section</span><strong>CSE-A</strong>
+                </div>
+                <div class="portal-field">
+                  <span>Academic year</span><strong>2026–27</strong>
+                </div>
+                <div class="portal-field">
+                  <span>Mentor</span><strong>Dr. Neha Verma</strong>
+                </div>
+              </div>
+            </div>
+            <div class="portal-card">
+              <h3>Attendance</h3>
+              <div class="portal-metric">
+                <span>Overall attendance</span><strong>86%</strong>
+              </div>
+              <div class="portal-progress"><i style="width: 86%"></i></div>
+              <div class="portal-metric">
+                <span>Present / total classes</span><strong>172 / 200</strong>
+              </div>
+              <div class="portal-metric">
+                <span>Eligibility status</span
+                ><span class="portal-badge">Eligible</span>
+              </div>
+            </div>
+            <div class="portal-card">
+              <h3>Internship</h3>
+              <div class="portal-status">
+                <span>Status</span><span class="portal-badge">In progress</span>
+              </div>
+              <div class="portal-field">
+                <span>Organisation</span><strong>TechNova Solutions</strong>
+              </div>
+              <div class="portal-field" style="margin-top: 12px">
+                <span>Role</span><strong>Frontend Developer Intern</strong>
+              </div>
+              <div class="portal-field" style="margin-top: 12px">
+                <span>Duration</span><strong>May – July 2026</strong>
+              </div>
+            </div>
+            <div class="portal-card wide">
+              <h3>Marks and semester performance</h3>
+              <table class="portal-table">
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Internal</th>
+                    <th>End semester</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Data Structures</td>
+                    <td>24 / 30</td>
+                    <td>58 / 70</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Operating Systems</td>
+                    <td>26 / 30</td>
+                    <td>55 / 70</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Database Management</td>
+                    <td>25 / 30</td>
+                    <td>61 / 70</td>
+                    <td>A+</td>
+                  </tr>
+                  <tr>
+                    <td>Computer Networks</td>
+                    <td>22 / 30</td>
+                    <td>54 / 70</td>
+                    <td>B+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="portal-card">
+              <h3>Academic summary</h3>
+              <div class="portal-metric">
+                <span>Current SGPA</span><strong>8.42</strong>
+              </div>
+              <div class="portal-metric">
+                <span>CGPA</span><strong>8.18</strong>
+              </div>
+              <div class="portal-metric">
+                <span>Credits earned</span><strong>96 / 160</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ADMISSIONS CTA -->
       <section class="cta-band" id="admissions">
         <div class="wrap reveal">
@@ -3560,7 +3698,7 @@
         <div class="kai-av">K</div>
         <div class="kai-head-text">
           <strong>Kashi AI</strong>
-          <small><i></i> Your College Website Assistant</small>
+          <small><i></i> Answers JSSATEN questions</small>
         </div>
         <div class="kai-head-actions">
           <button
@@ -4062,19 +4200,8 @@
           const delay = reduceMotion ? 50 : 450 + Math.random() * 450;
           setTimeout(() => {
             kaiHideTyping();
-            const navKey = kaiDetectNav(query);
-            if (navKey) {
-              const label =
-                KAI_SECTION_LABELS[KAI_SECTION_MAP[navKey]] || navKey;
-              kaiAddMsg(
-                "bot",
-                `Sure! Taking you to the ${label} section. ${navEmoji(navKey)}`,
-              );
-              kaiGoToSection(navKey);
-            } else {
-              const match = kaiMatchKB(query);
-              kaiAddMsg("bot", match ? match.answer : KAI_FALLBACK);
-            }
+            const match = kaiMatchKB(query);
+            kaiAddMsg("bot", match ? match.answer : KAI_FALLBACK);
             sendBtn.disabled = false;
             input.focus();
           }, delay);
@@ -4106,10 +4233,12 @@
         function kaiSeed() {
           kaiAddMsg(
             "bot",
-            `Hi! 👋 I'm <b>Kashi AI</b>, your college website assistant. I can help you explore information about academics, courses, facilities, research, placements, admissions and more. What would you like to know?`,
+            `Hi! 👋 I'm <b>Kashi AI</b>. Ask me a specific question about JSSATEN, such as courses, admissions, facilities, research, placements or contact details.`,
           );
         }
       })();
     </script>
+    <script src="assets/js/website-assistant.js"></script>
+    <script src="assets/js/student-portal.js"></script>
   </body>
 </html>
