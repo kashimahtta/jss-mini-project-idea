@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 
-export default function Hero({ onNavigate }) {
+export default function Hero({ onNavigate, onOpenProfile }) {
   return (
     <section
       id="home"
@@ -30,7 +30,7 @@ export default function Hero({ onNavigate }) {
             Explore JSSATEN <ArrowRight size={16} />
           </button>
           <button
-            onClick={() => onNavigate("student-portal")}
+            onClick={onOpenProfile}
             className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold transition hover:bg-white/10"
           >
             Open student portal

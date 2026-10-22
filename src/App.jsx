@@ -29,7 +29,10 @@ export default function App() {
         onOpenProfile={() => setProfileOpen(true)}
       />
       <main className="relative mx-auto max-w-7xl px-5 py-7 md:px-10">
-        <Hero onNavigate={navigate} />
+        <Hero
+          onNavigate={navigate}
+          onOpenProfile={() => setProfileOpen(true)}
+        />
         <CollegeSections />
       </main>
       <footer className="relative mt-16 border-t border-white/10 px-5 py-8 text-center text-xs text-slate-500">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Bot, ChevronRight, MapPin, X } from "lucide-react";
 import { navLinks } from "../data";
+import { answerFromKnowledgeBase } from "../kashiKnowledgeBase";
 
 const faq = [
   "What is JSSATEN?",
@@ -12,27 +13,17 @@ export default function AssistantPanel({ kind, onClose, onNavigate }) {
   const navigation = kind === "navigation";
   const [question, setQuestion] = useState("");
   const [reply, setReply] = useState("");
-  const answer = (value) => {
-    const text = value.toLowerCase();
-    if (text.includes("course") || text.includes("academic"))
-      return "JSSATEN offers undergraduate and postgraduate technical education programmes across engineering, computer applications and management.";
-    if (text.includes("facilit"))
-      return "The campus includes laboratories, library, hostels, innovation spaces, student support and activity areas.";
-    if (text.includes("admission") || text.includes("contact"))
-      return "For verified deadlines and documents, connect with the JSSATEN admissions office through the Contact section.";
-    if (text.includes("vision") || text.includes("mission"))
-      return "JSSATEN focuses on outcome-based education, technological competence, research, innovation and ethical values.";
-    return "JSS Academy of Technical Education, Noida is a technical institution in Sector 62, established in 1998 and affiliated with AKTU.";
-  };
   const submit = (value) => {
     if (!value.trim()) return;
-    setReply(navigation ? `Opening ${value} section.` : answer(value));
+    setReply(
+      navigation ? `Opening ${value} section.` : answerFromKnowledgeBase(value),
+    );
     setQuestion("");
     if (navigation) onNavigate(value);
   };
   const items = navigation ? navLinks.map(([label]) => label) : faq;
   return (
-    <div className="fixed bottom-24 right-5 z-50 w-[min(380px,calc(100vw-40px))] animate-[fadeUp_.25s_ease-out] rounded-3xl border border-white/10 bg-[#171d3d]/95 p-5 shadow-2xl backdrop-blur-xl">
+    <div className="fixed bottom-24 right-5 z-50 max-h-[calc(100vh-8rem)] w-[min(380px,calc(100vw-40px))] animate-[fadeUp_.25s_ease-out] overflow-y-auto rounded-3xl border border-white/10 bg-[#171d3d]/95 p-5 shadow-2xl backdrop-blur-xl">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div
@@ -56,7 +47,7 @@ export default function AssistantPanel({ kind, onClose, onNavigate }) {
       <p className="mt-5 text-sm leading-6 text-slate-300">
         {navigation
           ? "Choose a section and I will take you there."
-          : "Ask a question about JSSATEN, academics, facilities or admissions."}
+          : "Ask about JSSATEN, AKTU, programmes, fees, facilities, admissions or placements."}
       </p>
       <div className="mt-4 grid grid-cols-2 gap-2">
         {items.map((item) => (

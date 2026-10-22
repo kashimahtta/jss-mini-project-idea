@@ -14,10 +14,13 @@ export default function Navbar({
         <button
           onClick={() => onNavigate("home")}
           className="flex items-center gap-3 text-left"
+          aria-label="JSS Academy of Technical Education, Noida home"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet to-cyan text-xl font-black text-white shadow-glow">
-            J
-          </span>
+          <img
+            src="/jsslogo.jpg"
+            alt="JSS Academy of Technical Education, Noida logo"
+            className="h-12 w-12 rounded-full bg-white object-contain p-0.5 shadow-glow"
+          />
           <span>
             <strong className="block tracking-wide">JSSATEN</strong>
             <small className="block text-[10px] uppercase tracking-[.22em] text-slate-500">

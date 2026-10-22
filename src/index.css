@@ -33,3 +33,32 @@ input {
     transform: translateY(0);
   }
 }
+
+.rolling-track {
+  animation: campus-roll 38s linear infinite;
+}
+
+.rolling-facts:hover .rolling-track,
+.rolling-facts:focus-within .rolling-track {
+  animation-play-state: paused;
+}
+
+@keyframes campus-roll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rolling-track {
+    animation: none;
+  }
+
+  .rolling-track > [aria-hidden="true"] {
+    display: none;
+  }
+}
