@@ -7,6 +7,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { students } from "../data";
+import SectionBackground from "./SectionBackground";
 
 const currency = new Intl.NumberFormat("en-IN", {
   style: "currency",
@@ -63,8 +64,9 @@ export default function StudentPortal() {
   return (
     <section
       id="student-portal"
-      className="mt-12 border-t border-white/10 pt-12"
+      className="relative isolate mt-12 overflow-hidden rounded-3xl border border-white/10 p-6 sm:p-10"
     >
+      <SectionBackground image="/cafeterial.jpg" strength="bg-ink/90" />
       <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
         <div>
           <p className="text-xs uppercase tracking-[.2em] text-cyan">

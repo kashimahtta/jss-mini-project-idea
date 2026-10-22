@@ -6,6 +6,11 @@ export default function Hero({ onNavigate, onOpenProfile }) {
       id="home"
       className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet/25 via-white/[.06] to-cyan/10 px-6 py-16 md:px-14 md:py-24"
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/jss%20image.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-ink/75 to-ink/55" />
       <div className="absolute -right-16 -top-20 h-72 w-72 animate-float rounded-full bg-cyan/10 blur-3xl" />
       <div className="relative max-w-4xl">
         <p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[.25em] text-cyan">

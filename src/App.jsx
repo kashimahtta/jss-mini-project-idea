@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MessageCircle, Navigation, X } from "lucide-react";
+import AnnouncementPopup from "./components/AnnouncementPopup";
 import AssistantPanel from "./components/AssistantPanel";
 import CollegeSections from "./components/CollegeSections";
 import Hero from "./components/Hero";
@@ -50,10 +51,15 @@ export default function App() {
       >
         <MessageCircle size={18} /> Ask Kashi AI
       </button>
+      <AnnouncementPopup />
       {assistant && (
         <AssistantPanel
           kind={assistant}
           onNavigate={navigate}
+          onOpenProfile={() => {
+            setAssistant(null);
+            setProfileOpen(true);
+          }}
           onClose={() => setAssistant(null)}
         />
       )}
